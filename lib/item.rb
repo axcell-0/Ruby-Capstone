@@ -1,7 +1,7 @@
 require 'date'
 class Item
   attr_reader :genre, :author, :source, :label
-  attr_accessor  :id, :publish_date, :archived
+  attr_accessor :id, :publish_date, :archived
 
   def initialize(id, publish_date, archived)
     @id = id
@@ -27,5 +27,14 @@ class Item
   def save_label=(label)
     @label = label
     label.add_item(self) unless label.items.include?(self)
+  end
+
+  def can_be_archived?
+    current_year = Date.today.year
+    published_year = Date.parse(@publish_date).year
+    difference = current_year - published_year
+    return false unless difference > 10
+
+    true
   end
 end
