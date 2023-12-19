@@ -12,5 +12,6 @@ class Label
 
   def add_item(item)
     @items << item
+    item.save_genre = self
   end
 end
