@@ -1,4 +1,3 @@
-# class book
 class Book < Item
   attr_accessor :publisher, :cover_state, :item_id
 
