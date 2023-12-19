@@ -3,8 +3,8 @@ class Item
   attr_reader :genre, :author, :source, :label
   attr_accessor :id, :publish_date, :archived
 
-  def initialize(id, publish_date, archived)
-    @id = id
+  def initialize(publish_date, archived: false)
+    @id = Random.rand(1..1000)
     @publish_date = publish_date
     @archived = archived
   end
@@ -36,5 +36,11 @@ class Item
     return false unless difference > 10
 
     true
+  end
+
+  def move_to_archive
+    return unless can_be_archived?
+
+    @archived = true
   end
 end
