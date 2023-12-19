@@ -23,10 +23,10 @@ describe Genre do
       json = {
         id: genre.id,
         name: 'Rock',
-        items: [test_item.id()]
+        items: [test_item.id]
       }
 
-      genre.items.push(test_item) 
+      genre.items.push(test_item)
       result = genre.to_json_string
 
       expect(result).to eq(JSON.pretty_generate(json))
