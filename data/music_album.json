@@ -1,0 +1,13 @@
+[
+  {
+    "json_class": "MusicAlbum",
+    "id": 937,
+    "publish_date": "2222-22-22",
+    "archived": false,
+    "on_spotify": false,
+    "genre": {
+      "name": "rock",
+      "id": 337
+    }
+  }
+]
