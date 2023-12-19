@@ -2,6 +2,7 @@ require 'json'
 require_relative 'item'
 class Genre
   attr_accessor :name, :items, :id
+
   def initialize(name)
     @id = Random.rand(1..1000)
     @name = name
@@ -15,8 +16,8 @@ class Genre
 
   def to_json_string
     JSON.pretty_generate({
-      id: @id,
-      name: @name
-    })
+                           id: @id,
+                           name: @name
+                         })
   end
 end
