@@ -1,5 +1,5 @@
 require 'json'
-require_relative 'item'
+
 class Genre
   attr_accessor :name, :items, :id
   def initialize(name)
@@ -14,9 +14,11 @@ class Genre
   end
 
   def to_json_string
+    items_id = @items.map{|item| item.id}
     JSON.pretty_generate({
       id: @id,
-      name: @name
+      name: @name,
+      items: items_id
     })
   end
 end
