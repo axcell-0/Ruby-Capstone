@@ -45,6 +45,10 @@ class App
     save_books(@books)
   end
 
+  def test
+    add_a_book
+    add_all_books_to_file
+  end
 end
 
 app = App.new

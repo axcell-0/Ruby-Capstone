@@ -1,14 +1,26 @@
 [
   {
     "json_class": "Book",
-    "id": 78,
+    "id": 256,
+    "publish_date": "2222-22-22",
+    "archived": false,
+    "publisher": "test",
+    "cover_state": "Good",
+    "genre": {
+      "name": "pop",
+      "id": 905
+    }
+  },
+  {
+    "json_class": "Book",
+    "id": 343,
     "publish_date": "2222-22-22",
     "archived": false,
     "publisher": "test",
     "cover_state": "Good",
     "genre": {
       "name": "fiction",
-      "id": 757
+      "id": 351
     }
   }
 ]

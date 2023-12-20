@@ -15,13 +15,22 @@ module GenreModule
     File.write(GENRE_PATH, JSON.pretty_generate(data))
   end
 
-  def create_genre
+  def create_genre(book:nil, music_album:nil, author:nil, source:nil)
     check_genre_file
     print 'Name of Genre: '
     name = gets.chomp
     genre = Genre.new(name)
+    genre.add_item(book) if book
+    genre.add_item(music_album) if music_album
+    genre.add_item(author) if author
+    genre.add_item(source) if source
     write_genre_to_file(genre)
     return genre
+  end
+
+  def get_all_genres
+    return nil if !File.exist?(GENRE_PATH) || File.read(GENRE_PATH).empty?
+    data = JSON.parse(File.read(GENRE_PATH))
   end
 
   def show_all_genres

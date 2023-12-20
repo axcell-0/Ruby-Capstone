@@ -1,14 +1,6 @@
 [
   {
     "json_class": "Genre",
-    "id": 50,
-    "name": "rock",
-    "items": [
-
-    ]
-  },
-  {
-    "json_class": "Genre",
     "id": 905,
     "name": "pop",
     "items": [
@@ -17,34 +9,10 @@
   },
   {
     "json_class": "Genre",
-    "id": 981,
-    "name": "rock",
-    "items": [
-
-    ]
-  },
-  {
-    "json_class": "Genre",
-    "id": 796,
+    "id": 351,
     "name": "fiction",
     "items": [
-
-    ]
-  },
-  {
-    "json_class": "Genre",
-    "id": 496,
-    "name": "fiction",
-    "items": [
-
-    ]
-  },
-  {
-    "json_class": "Genre",
-    "id": 757,
-    "name": "fiction",
-    "items": [
-
+      343
     ]
   }
 ]
