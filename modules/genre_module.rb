@@ -21,7 +21,6 @@ module GenreModule
     name = gets.chomp
     genre = Genre.new(name)
     write_genre_to_file(genre)
-    puts 'Genre Created Successfully!'
     return genre
   end
 

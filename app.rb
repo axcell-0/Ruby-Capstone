@@ -9,9 +9,6 @@ require './modules/music_album_module'
 class App
   include GenreModule
   include MusicAlbumModule
-  def add_genre
-    create_genre
-  end
   def list_genre
     show_all_genres
   end
@@ -25,6 +22,6 @@ end
 
 
 app = App.new
-app.list_music_album
+app.add_music_album
 
 
