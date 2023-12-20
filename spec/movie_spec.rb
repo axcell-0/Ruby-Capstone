@@ -1,4 +1,4 @@
-require_relative '../src/classes/movie'
+require_relative './classes/movie'
 
 describe Movie do
   before :each do
