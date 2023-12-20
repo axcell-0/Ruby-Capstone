@@ -1,4 +1,3 @@
-require_relative '../classes/movie_class'
 require_relative '../classes/author_class'
 require_relative '../classes/source_class'
 
