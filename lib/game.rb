@@ -22,9 +22,20 @@ class Game < Item
       last_played_at: @last_played_at,
       publish_date: @publish_date,
       archived: @archived,
-      label: @label,
-      author: @author,
-      genre: @genre
+      genre: {
+        name: @genre.name,
+        id: @genre.id
+      },
+      label: {
+        title: @label.title,
+        color: @label.color,
+        id: @label.id
+      },
+      author: {
+        first_name: @author.first_name,
+        last_name: @author.last_name,
+        id: @author.id
+      }
     }.to_json(option)
   end
 end

@@ -29,11 +29,11 @@ class Book < Item
           color: @label.color,
           id: @label.id
         },
-        # author: {
-        #   first_name: @author.first_name,
-        #   last_name: @author.last_name,
-        #   id: @author.id
-        # }
+        author: {
+          first_name: @author.first_name,
+          last_name: @author.last_name,
+          id: @author.id
+        }
       }
     )
   end  

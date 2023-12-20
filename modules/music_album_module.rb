@@ -41,7 +41,8 @@ module MusicAlbumModule
     genre.add_item(album)
     label = create_label
     label.add_item(album)
-    # author = create_author
+    author = create_author
+    author.add_item(album)
     write_music_album_to_file(album)
     puts 'Music Album Created Successfully'
     puts

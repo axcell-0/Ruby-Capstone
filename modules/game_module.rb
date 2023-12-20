@@ -1,6 +1,6 @@
 require_relative '../lib/game'
 require_relative 'author_module'
-require_relative 'load_book_label_data'
+require_relative 'save_book_label_data'
 require_relative 'genre_module'
 require 'json'
 
@@ -12,7 +12,7 @@ module GameModule
     gets.chomp
   end
 
-  def list_games
+  def list_all_games
     if File.exist?('data/games.json')
       File.open('data/games.json', 'r').each do |line|
         game_data = JSON.parse(line)
@@ -32,13 +32,13 @@ module GameModule
     last_played_at = get_user_input('Last played(yyyy-mm-dd): ')
     publish_date = get_user_input('Game publish date(yyyy-mm-dd): ')
     label = create_label
-    genre = creating_genre
-    author = add_author
+    genre = create_genre
+    author = create_author
 
     game = Game.new(multiplayer, last_played_at, publish_date)
-    game.label = label
-    game.genre = genre
-    game.author = author
+    label.add_item(game)
+    genre.add_item(game)
+    # author.add_item(game)
 
     File.open('data/games.json', 'a') do |file|
       file.puts game.to_json

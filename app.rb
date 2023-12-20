@@ -8,41 +8,52 @@ require './modules/music_album_module'
 require './lib/book'
 require './lib/label'
 require './modules/save_book_label_data'
+require './modules/author_module'
+require './modules/game_module'
 class App
   include GenreModule
   include MusicAlbumModule
   include SaveBookLabelData
+  include AuthorModule
+  include GameModule
 
   def list_genre
     show_all_genres
+  end
+  def list_music_albums
+    show_all_music_albums
+  end
+  def list_books
+    show_all_books
+  end
+  def list_labels
+    list_labels
+  end
+  def list_games
+    list_all_games
+  end
+  def list_authors
+    list_present_authors
   end
 
   def add_music_album
     create_music_album
   end
-
-  def list_music_albums
-    show_all_music_albums
-  end
-
   def add_a_book
     create_book
   end
-
-  def list_all_books
-    show_all_books
+  def add_game
+    create_game
   end
-
-  def list_all_labels
-    list_labels
+  def add_author
+    create_author
   end
 
   def test
-    label = create_label
-    show_all_labels
+    create_game
+    list_all_games
   end
 end
 
 app = App.new
-app.add_a_book
-app.list_all_books
+app.test

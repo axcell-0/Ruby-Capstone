@@ -22,20 +22,13 @@ module AuthorModule
     end
   end
 
-  def add_author
-    puts 'Adding Author to the Record: '
+  def create_author
     first_name = get_user_input('First Name: ')
     last_name = get_user_input('Last Name: ')
     author = Author.new(first_name, last_name)
-
     File.open('data/authors.json', 'a') do |file|
       file.puts author.to_json
     end
-
-    puts '-----------------------------------'
-    puts 'successfully ADDED!!'
-    puts '-----------------------------------'
-
     author
   end
 end

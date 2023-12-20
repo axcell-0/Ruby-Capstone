@@ -68,6 +68,8 @@ module SaveBookLabelData
     genre.add_item(book)
     label = create_label
     label.add_item(book)
+    author = create_author
+    author.add_item(book)
     save_book(book)
     puts 'Book Created Successfully'
   end
