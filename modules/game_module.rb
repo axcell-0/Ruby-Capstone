@@ -12,14 +12,19 @@ module GameModule
     gets.chomp
   end
 
+  def check_game_file
+    return if File.exist?('data/games.json')
+    FileUtils.touch('data/games.json')
+  end
+
   def list_all_games
-    if File.exist?('data/games.json')
-      File.open('data/games.json', 'r').each do |line|
-        game_data = JSON.parse(line)
-        new_game = Game.new(game_data['multiplayer'], game_data['last_played_at'], game_data['publish_date'])
-        print "ID: #{new_game.id} Multiplayer: #{new_game.multiplayer} "
-        puts "last_played: #{new_game.last_played_at}, Game Published: #{new_game.publish_date}"
-        puts '-----------------------------------'
+    puts "Games:"
+    if File.exist?('data/games.json') && !File.read('data/games.json').empty?
+      data = JSON.parse(File.read('data/games.json'))
+      data.each do |game|
+        puts "  ID: #{game['id']}, Multiplayer: #{game['multiplayer']}, Last Played: #{game['last_played_at']}"
+        puts "  Last Played: #{game['last_played_at']}, Publish Date: #{game['publish_date']}"
+        puts "  _________________________________________________"
       end
     else
       puts 'There is no Games yet!'
@@ -27,6 +32,8 @@ module GameModule
   end
 
   def create_game
+    check_game_file
+    file = File.read('data/games.json')
     puts 'Creating a Game Record: '
     multiplayer = get_user_input('Multiplayer[Y/N]: ').casecmp('Y').zero?
     last_played_at = get_user_input('Last played(yyyy-mm-dd): ')
@@ -38,11 +45,10 @@ module GameModule
     game = Game.new(multiplayer, last_played_at, publish_date)
     label.add_item(game)
     genre.add_item(game)
-    # author.add_item(game)
-
-    File.open('data/games.json', 'a') do |file|
-      file.puts game.to_json
-    end
+    author.add_item(game)
+    data = file.empty? ? [] : JSON.parse(file)
+    data.push(game.to_json)
+    File.write('data/games.json', JSON.pretty_generate(data))
     puts 'Game Added Successfully!'
   end
 end
