@@ -15,13 +15,11 @@ class Genre
   end
 
   def to_json(*_args)
-    items_id = @items.map(&:id)
     JSON.pretty_generate(
       {
         JSON.create_id => self.class.name,
         id: @id,
         name: @name,
-        items: items_id
       }
     )
   end

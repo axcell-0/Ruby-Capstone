@@ -8,7 +8,6 @@ require './modules/music_album_module'
 require './lib/book'
 require './lib/label'
 require './modules/save_book_label_data'
-require './modules/load_book_label_data'
 class App
   include GenreModule
   include MusicAlbumModule
@@ -38,8 +37,12 @@ class App
     list_labels
   end
 
+  def test
+    label = create_label
+    save_label(label)
+    show_all_labels
+  end
 end
 
 app = App.new
-app.add_a_book
-app.list_all_books
+app.test
