@@ -1,4 +1,4 @@
-require_relative '../book/book'
+require_relative '../lib/book'
 
 # New Book
 module NEWBOOK

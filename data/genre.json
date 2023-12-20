@@ -14,5 +14,13 @@
     "items": [
 
     ]
+  },
+  {
+    "json_class": "Genre",
+    "id": 981,
+    "name": "rock",
+    "items": [
+
+    ]
   }
 ]

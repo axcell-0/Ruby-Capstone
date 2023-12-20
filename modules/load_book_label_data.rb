@@ -1,6 +1,7 @@
-module LoadGenreAlbumData
-  BOOK_FILE = 'lib/data/book.json'.freeze
-  LABEL_FILE = 'lib/data/label.json'.freeze
+require 'json'
+module NEWBOOK
+  BOOK_FILE = './data/book.json'.freeze
+  LABEL_FILE = './data/label.json'.freeze
 
   def load_label_data
     hash = []

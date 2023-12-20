@@ -6,8 +6,8 @@ require './lib/item'
 require 'fileutils'
 require './modules/genre_module'
 require './modules/music_album_module'
-require './lib/book/book'
-require './lib/book/label'
+require './lib/book'
+require './lib/label'
 require './modules/add_book'
 require './modules/save_book_label_data'
 require './modules/load_book_label_data'
@@ -20,6 +20,7 @@ class App
   def initialize
     @books = []
     load_book_data
+  end
   def add_genre
     create_genre
   end
@@ -54,4 +55,4 @@ class App
 end
 
 app = App.new
-app.add_music_album
+app.add_a_book

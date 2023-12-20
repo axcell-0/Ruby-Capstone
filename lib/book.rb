@@ -1,11 +1,10 @@
 class Book < Item
   attr_accessor :publisher, :cover_state, :item_id
 
-  def initialize(publish_date, publisher, cover_state, label_id)
+  def initialize(publish_date, publisher, cover_state)
     super(publish_date)
     @publisher = publisher
     @cover_state = cover_state
-    @label_id = label_id
   end
 
   private
