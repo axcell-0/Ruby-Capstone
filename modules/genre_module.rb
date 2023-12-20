@@ -27,10 +27,13 @@ module GenreModule
     return genre
   end
 
-  def get_all_genres
-    return nil if !File.exist?(GENRE_PATH) || File.read(GENRE_PATH).empty?
-    return data = JSON.parse(File.read(GENRE_PATH))
-  end
+  # def get_all_genres_from_file
+  #   return nil if !File.exist?(GENRE_PATH) || File.read(GENRE_PATH).empty?
+  #   genres = []
+  #   data.each do |genre|
+  #   end
+  #   return data = JSON.parse(File.read(GENRE_PATH))
+  # end
 
   def show_all_genres
     if !File.exist?(GENRE_PATH) || File.read(GENRE_PATH).empty?

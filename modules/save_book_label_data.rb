@@ -36,11 +36,11 @@ module SaveBookLabelData
     cover_state_input = gets.chomp
     cover_state = cover_state_input == '1' ? 'Good' : 'Bad'
     book = Book.new(date, publisher, cover_state)
-    puts "Genre name:"
+    print "Genre name:"
+    genre_name = gets.chomp
     genre = create_genre(book:book, name:genre_name)
-    book.save_genre = genre
+    write_genre_to_file(genre)
     puts 'Book Created Successfully'
-    puts book
     return book
   end
 end
