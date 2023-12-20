@@ -1,7 +1,6 @@
 require './lib/genre'
 require './lib/music_album'
 require 'json'
-require './lib/genre'
 require './lib/item'
 require 'fileutils'
 require './modules/genre_module'
@@ -18,12 +17,15 @@ class App
   def initialize
     @books = []
   end
+
   def add_genre
     create_genre
   end
+
   def list_genre
     show_all_genres
   end
+
   def add_music_album
     create_music_album
   end
