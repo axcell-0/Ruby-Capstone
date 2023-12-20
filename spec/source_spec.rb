@@ -1,22 +1,26 @@
-require_relative '../classes/source_class'
+require_relative '../classes/source'
+require_relative '../classes/item'
 
 describe Source do
-  before(:each) do
-    @source = Source.new('Source Name')
-    @item = double('Item')
+  before :each do
+    @source = Source.new('Ronaldo')
   end
 
-  it 'has an id' do
-    expect(@source).to be_an_instance_of Source
+  describe '#new' do
+    it 'creates an instance of the source class' do
+      @source.should(be_an_instance_of(Source))
+    end
   end
 
-  it 'has a name' do
-    expect(@source.name).to eq('Source Name')
+  it 'throws an argument error when parameters are less than or greater than is expected' do
+    -> { Source.new }.should raise_error ArgumentError
   end
 
-  it 'can add an item' do
-    allow(@item).to receive(:source).and_return(@source)
-    @source.add_item(@item)
-    expect(@source.items).to include(@item)
+  describe 'tests for methods in source class' do
+    it 'should add an item' do
+      item = Item.new('2022-05-09')
+      @source.add_item(item)
+      expect(@source.items.length).to eql 1
+    end
   end
 end
