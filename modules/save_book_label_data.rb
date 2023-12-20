@@ -9,19 +9,16 @@ module SaveBookLabelData
   LABEL_FILE = './data/label.json'.freeze
   def check_book_file
     return if File.exist?(BOOK_FILE)
-
-    FileUtils.touch(GENRE_PATH)
+    FileUtils.touch(BOOK_FILE)
   end
 
   def save_label; end
 
-  def save_books(_books)
+  def save_book(book)
     check_book_file
     file = File.read(BOOK_FILE)
     data = file.empty? ? [] : JSON.parse(file)
-    books.each do |book|
-      data.push(JSON.parse(book.to_json))
-    end
+    data.push(JSON.parse(book.to_json))
     File.write(BOOK_FILE, JSON.pretty_generate(data))
   end
 
@@ -35,12 +32,21 @@ module SaveBookLabelData
     cover_state_input = gets.chomp
     cover_state = cover_state_input == '1' ? 'Good' : 'Bad'
     book = Book.new(date, publisher, cover_state)
-    print "Genre name:"
-    genre_name = gets.chomp
-    genre = create_genre(book:book, name:genre_name)
-    write_genre_to_file(genre)
+    genre = create_genre
+    genre.add_item(book)
+    save_book(book)
     puts 'Book Created Successfully'
-    puts book
-    book
+  end
+
+  def show_all_books
+    if !File.exist?(BOOK_FILE) || File.empty?(BOOK_FILE)
+      puts 'No Albums have been added yet'
+      return
+    end
+    puts 'Books:'
+    data = JSON.parse(File.read(BOOK_FILE))
+    data.each do |book|
+      puts "  ID: #{book['id']}, Publisher #{book['publisher']}, Publish_date: #{book['publish_date']}, Genre: #{book['genre']['name']}"
+    end
   end
 end

@@ -26,25 +26,20 @@ class App
     show_all_music_albums
   end
 
+  def add_a_book
+    create_book
+  end
+
   def list_all_books
-    list_books
+    show_all_books
   end
 
   def list_all_labels
     list_labels
   end
 
-  def add_a_book
-    book = create_book
-    @books.push(book)
-  end
-
-  def add_all_books_to_file
-    save_books(@books)
-  end
 end
 
 app = App.new
-app.add_music_album
-app.list_music_albums
-app.list_genre
+app.add_a_book
+app.list_all_books

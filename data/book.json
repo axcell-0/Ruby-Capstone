@@ -1,0 +1,38 @@
+[
+  {
+    "json_class": "Book",
+    "id": 293,
+    "publish_date": "2222-22-22",
+    "archived": false,
+    "publisher": "name",
+    "cover_state": "Good",
+    "genre": {
+      "name": "rock",
+      "id": 566
+    }
+  },
+  {
+    "json_class": "Book",
+    "id": 283,
+    "publish_date": "2222-22-22",
+    "archived": false,
+    "publisher": "test",
+    "cover_state": "Bad",
+    "genre": {
+      "name": "22",
+      "id": 628
+    }
+  },
+  {
+    "json_class": "Book",
+    "id": 990,
+    "publish_date": "2222-22-22",
+    "archived": false,
+    "publisher": "hamid",
+    "cover_state": "Good",
+    "genre": {
+      "name": "po",
+      "id": 850
+    }
+  }
+]
