@@ -32,5 +32,4 @@ module Preserve
   def load_source
     fetch_file('source').map { |source| Source.new(source['name']) }
   end
-
 end
