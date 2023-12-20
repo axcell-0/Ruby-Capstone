@@ -8,9 +8,9 @@ require './modules/genre_module'
 require './modules/music_album_module'
 require './lib/book/book'
 require './lib/book/label'
-require './lib/modules/add_book'
-require './lib/modules/save_book_label_data'
-require './lib/modules/load_book_label_data'
+require './modules/add_book'
+require './modules/save_book_label_data'
+require './modules/load_book_label_data'
 class App
   include GenreModule
   include MusicAlbumModule
