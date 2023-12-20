@@ -16,22 +16,16 @@ class App
 
   def initialize
     @books = []
-    @genres = []
   end
 
   def add_genre
     print "Genre Name: "
     genre_name = gets.chomp
-    genre = create_genre(name:genre_name)
-    @genres.push(genre)
+    genre = create_genre(genre_name)
   end
 
   def list_genre
-    show_all_genres(@genres)
-  end
-
-  def save_genres()
-    write_genre_to_file(@genres)
+    show_all_genres
   end
 
   def add_music_album
@@ -59,4 +53,3 @@ end
 app = App.new
 app.add_genre
 app.list_genre
-app.save_genres

@@ -8,28 +8,30 @@ module GenreModule
     FileUtils.touch(GENRE_PATH)
   end
 
-  def write_genre_to_file(genres)
+  def write_genre_to_file(genre)
     check_genre_file
     file = File.read(GENRE_PATH)
     data = file.empty? ? [] : JSON.parse(file)
-    genres.each do |genre|
-      data.push(JSON.parse(genre.to_json))
-    end
+    data.push(JSON.parse(genre.to_json))
     File.write(GENRE_PATH, JSON.pretty_generate(data))
   end
 
-  def create_genre(book:nil, music_album:nil, author:nil, source:nil, name:nil)
-    if name.nil? || name.empty?
+  def create_genre(name)
+    if !name
       raise ArgumentError, 'Invalid genre name. Please provide a valid name.'
     end
     genre = Genre.new(name)
-    genre
+    write_genre_to_file(genre)
   end
 
-  def show_all_genres(data)
+  def show_all_genres
+    if File.read(GENRE_PATH).empty? || !File.exist?(GENRE_PATH)
+      puts "No Genres have been added yet"
+    end
+    data = JSON.parse(File.read(GENRE_PATH))
     puts 'Genres:'
     data.each do |genre|
-      puts "  ID: #{genre.id}, Name: #{genre.name}"
+      puts "  ID: #{genre['id']}, Name: #{genre['name']}"
     end
   end
 end

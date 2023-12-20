@@ -1,0 +1,26 @@
+[
+  {
+    "json_class": "Genre",
+    "id": 206,
+    "name": "rock",
+    "items": [
+
+    ]
+  },
+  {
+    "json_class": "Genre",
+    "id": 243,
+    "name": "jok",
+    "items": [
+
+    ]
+  },
+  {
+    "json_class": "Genre",
+    "id": 522,
+    "name": "shop",
+    "items": [
+
+    ]
+  }
+]
