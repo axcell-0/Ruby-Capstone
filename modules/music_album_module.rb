@@ -35,12 +35,12 @@ module MusicAlbumModule
     on_spotify_input = gets.chomp
     on_spotify = on_spotify_input.downcase == 'y'
     album = MusicAlbum.new(publish_date, on_spotify)
-    genre = create_genre
+    print 'Genre name: '
+    genre_name = gets.chomp
+    genre = create_genre(name:genre_name, music_album:album)
+    write_genre_to_file(genre)
     # author = create_author
     # label = create_label
-    album.save_genre = genre
-    # album.save_label = label
-    # album.save_author = author
     write_music_album_to_file(album)
     puts "Music Album Created Successfully"
     puts

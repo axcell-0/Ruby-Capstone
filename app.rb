@@ -19,7 +19,10 @@ class App
     @books = []
   end
   def add_genre
-    create_genre
+    print "Genre Name: "
+    genre_name = gets.chomp
+    genre = create_genre(name:genre_name)
+    write_genre_to_file(genre)
   end
   def list_genre
     show_all_genres
@@ -52,4 +55,4 @@ class App
 end
 
 app = App.new
-app.test
+app.add_music_album

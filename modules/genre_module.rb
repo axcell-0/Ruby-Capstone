@@ -8,29 +8,28 @@ module GenreModule
   end
   
   def write_genre_to_file(genre)
-    check_genre_file
     file = File.read(GENRE_PATH)
     data = file.empty? ? [] : JSON.parse(file)
     data.push(JSON.parse(genre.to_json))
     File.write(GENRE_PATH, JSON.pretty_generate(data))
   end
 
-  def create_genre(book:nil, music_album:nil, author:nil, source:nil)
+  def create_genre(book:nil, music_album:nil, author:nil, source:nil, name:nil)
     check_genre_file
-    print 'Name of Genre: '
-    name = gets.chomp
+    if name.nil? || name.empty?
+      raise ArgumentError, 'Invalid genre name. Please provide a valid name.'
+    end
     genre = Genre.new(name)
     genre.add_item(book) if book
     genre.add_item(music_album) if music_album
     genre.add_item(author) if author
     genre.add_item(source) if source
-    write_genre_to_file(genre)
     return genre
   end
 
   def get_all_genres
     return nil if !File.exist?(GENRE_PATH) || File.read(GENRE_PATH).empty?
-    data = JSON.parse(File.read(GENRE_PATH))
+    return data = JSON.parse(File.read(GENRE_PATH))
   end
 
   def show_all_genres
