@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../classes/movie_class'
-require_relative '../classes/author_class'
-require_relative '../classes/source_class'
+require_relative './classes/movie_class'
+require_relative './classes/author_class'
+require_relative './classes/source_class'
 
 describe Movie do
   before(:each) do
