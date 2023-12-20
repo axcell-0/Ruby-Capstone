@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class App
   def create_movie
     puts 'You have selected 11 - Create a movie'
