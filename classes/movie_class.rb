@@ -1,3 +1,5 @@
+require_relative './item'
+require_relative 'author_class'
 require_relative 'source_class'
 
 class Movie < Item
