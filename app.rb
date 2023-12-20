@@ -39,10 +39,10 @@ class App
 
   def test
     label = create_label
-    save_label(label)
     show_all_labels
   end
 end
 
 app = App.new
-app.test
+app.add_a_book
+app.list_all_books

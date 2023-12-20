@@ -24,12 +24,12 @@ class MusicAlbum < Item
         genre: {
           name: @genre.name,
           id: @genre.id
-        }
-        # label: {
-        #   title: @label.title,
-        #   color: @label.color,
-        #   id: @label.id
-        # },
+        },
+        label: {
+          title: @label.title,
+          color: @label.color,
+          id: @label.id
+        },
         # author: {
         #   first_name: @author.first_name,
         #   last_name: @author.last_name,

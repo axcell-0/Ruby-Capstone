@@ -39,8 +39,9 @@ module MusicAlbumModule
     album = MusicAlbum.new(publish_date, on_spotify)
     genre = create_genre
     genre.add_item(album)
+    label = create_label
+    label.add_item(album)
     # author = create_author
-    # label = create_label
     write_music_album_to_file(album)
     puts 'Music Album Created Successfully'
     puts
