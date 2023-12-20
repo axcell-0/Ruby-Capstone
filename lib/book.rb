@@ -7,9 +7,34 @@ class Book < Item
     @cover_state = cover_state
   end
 
-  private
-
   def can_be_archived?
     super || @cover_state == 'bad'
   end
+
+  def to_json
+    JSON.pretty_generate(
+      {
+        JSON.create_id => self.class.name,
+        id: @id,
+        publish_date: @publish_date,
+        archived: @archived,
+        publisher: @publisher,
+        cover_state: @cover_state,
+        genre: {
+          name: @genre.name,
+          id: @genre.id
+        },
+        # label: {
+        #   title: @label.title,
+        #   color: @label.color,
+        #   id: @label.id
+        # },
+        # author: {
+        #   first_name: @author.first_name,
+        #   last_name: @author.last_name,
+        #   id: @author.id
+        # }
+      }
+    )
+  end  
 end

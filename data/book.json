@@ -1,0 +1,14 @@
+[
+  {
+    "json_class": "Book",
+    "id": 78,
+    "publish_date": "2222-22-22",
+    "archived": false,
+    "publisher": "test",
+    "cover_state": "Good",
+    "genre": {
+      "name": "fiction",
+      "id": 757
+    }
+  }
+]

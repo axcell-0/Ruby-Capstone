@@ -37,9 +37,15 @@ class App
   end
 
   def add_a_book
-    create_book
+    book = create_book
+    @books.push(book)
   end
+
+  def add_all_books_to_file
+    save_books(@books)
+  end
+
 end
 
 app = App.new
-app.add_a_book
+app.test

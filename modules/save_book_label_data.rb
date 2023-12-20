@@ -9,7 +9,7 @@ module SaveBookLabelData
   LABEL_FILE = './data/label.json'.freeze
   def check_book_file
     return if File.exist?(BOOK_FILE)
-    FileUtils.touch(GENRE_PATH)
+    FileUtils.touch(BOOK_FILE)
   end
 
   def save_label
@@ -17,6 +17,12 @@ module SaveBookLabelData
 
   def save_books(books)
     check_book_file
+    file = File.read(BOOK_FILE)
+    data = file.empty? ? [] : JSON.parse(file)
+    books.each do |book|
+      data.push(JSON.parse(book.to_json))
+    end
+    File.write(BOOK_FILE, JSON.pretty_generate(data))
   end
 
   def create_book
