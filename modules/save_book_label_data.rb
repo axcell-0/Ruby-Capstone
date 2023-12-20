@@ -1,6 +1,6 @@
 require 'json'
-require_relative './music_album_module'
-require_relative './genre_module'
+require_relative 'music_album_module'
+require_relative 'genre_module'
 require './lib/book'
 
 # Module to preserve data
@@ -9,14 +9,13 @@ module SaveBookLabelData
   LABEL_FILE = './data/label.json'.freeze
   def check_book_file
     return if File.exist?(BOOK_FILE)
-    FileUtils.touch(BOOK_FILE)
+
+    FileUtils.touch(GENRE_PATH)
   end
 
-  def save_label
+  def save_label; end
 
-  end
-
-  def save_books(books)
+  def save_books(_books)
     check_book_file
     file = File.read(BOOK_FILE)
     data = file.empty? ? [] : JSON.parse(file)
@@ -41,6 +40,7 @@ module SaveBookLabelData
     genre = create_genre(book:book, name:genre_name)
     write_genre_to_file(genre)
     puts 'Book Created Successfully'
-    return book
+    puts book
+    book
   end
 end

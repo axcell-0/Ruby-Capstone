@@ -1,12 +1,13 @@
 require './lib/genre'
 require 'fileutils'
 module GenreModule
-  GENRE_PATH = './data/genre.json'
+  GENRE_PATH = './data/genre.json'.freeze
   def check_genre_file
     return if File.exist?(GENRE_PATH)
+
     FileUtils.touch(GENRE_PATH)
   end
-  
+
   def write_genre_to_file(genre)
     file = File.read(GENRE_PATH)
     data = file.empty? ? [] : JSON.parse(file)
@@ -20,11 +21,8 @@ module GenreModule
       raise ArgumentError, 'Invalid genre name. Please provide a valid name.'
     end
     genre = Genre.new(name)
-    genre.add_item(book) if book
-    genre.add_item(music_album) if music_album
-    genre.add_item(author) if author
-    genre.add_item(source) if source
-    return genre
+    write_genre_to_file(genre)
+    genre
   end
 
   # def get_all_genres_from_file
@@ -36,10 +34,10 @@ module GenreModule
   # end
 
   def show_all_genres
-    if !File.exist?(GENRE_PATH) || File.read(GENRE_PATH).empty?
+    if !File.exist?(GENRE_PATH) || File.empty?(GENRE_PATH)
       puts 'No genres have been added yet'
       return
-    end    
+    end
     data = JSON.parse(File.read(GENRE_PATH))
     puts 'Genres:'
     data.each do |genre|

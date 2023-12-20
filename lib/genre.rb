@@ -14,13 +14,8 @@ class Genre
     item.save_genre = self
   end
 
-  def to_json
-    items_id = @items.map do |item|
-      {
-        JSON.create_id => item.class.name,
-        id: item.id
-      }
-    end
+  def to_json(*_args)
+    items_id = @items.map(&:id)
     JSON.pretty_generate(
       {
         JSON.create_id => self.class.name,
