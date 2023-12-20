@@ -1,24 +1,8 @@
 [
   {
     "json_class": "Genre",
-    "id": 206,
+    "id": 858,
     "name": "rock",
-    "items": [
-
-    ]
-  },
-  {
-    "json_class": "Genre",
-    "id": 243,
-    "name": "jok",
-    "items": [
-
-    ]
-  },
-  {
-    "json_class": "Genre",
-    "id": 522,
-    "name": "shop",
     "items": [
 
     ]

@@ -16,12 +16,12 @@ module GenreModule
     File.write(GENRE_PATH, JSON.pretty_generate(data))
   end
 
-  def create_genre(name)
-    if !name
-      raise ArgumentError, 'Invalid genre name. Please provide a valid name.'
-    end
+  def create_genre
+    print "Genre Name:"
+    name = gets.chomp
     genre = Genre.new(name)
     write_genre_to_file(genre)
+    return genre
   end
 
   def show_all_genres

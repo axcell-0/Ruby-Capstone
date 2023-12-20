@@ -14,14 +14,8 @@ class App
   include MusicAlbumModule
   include SaveBookLabelData
 
-  def initialize
-    @books = []
-  end
-
   def add_genre
-    print "Genre Name: "
-    genre_name = gets.chomp
-    genre = create_genre(genre_name)
+    genre = create_genre
   end
 
   def list_genre
@@ -30,6 +24,10 @@ class App
 
   def add_music_album
     create_music_album
+  end
+
+  def list_music_albums
+    show_all_music_albums
   end
 
   def list_all_books
@@ -51,5 +49,5 @@ class App
 end
 
 app = App.new
-app.add_genre
-app.list_genre
+app.add_music_album
+app.list_music_albums
