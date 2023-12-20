@@ -18,10 +18,13 @@ class App
   def add_music_album
     create_music_album
   end
+  def list_music_album
+    show_all_music_albums
+  end
 end
 
 
 app = App.new
-app.add_music_album
+app.list_music_album
 
 

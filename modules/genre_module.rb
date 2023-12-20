@@ -15,7 +15,7 @@ module GenreModule
     File.write(GENRE_PATH, JSON.pretty_generate(data))
   end
 
-  def create_genre()
+  def create_genre
     check_genre_file
     print 'Name of Genre: '
     name = gets.chomp
@@ -32,8 +32,8 @@ module GenreModule
     end    
     data = JSON.parse(File.read(GENRE_PATH))
     puts 'Genres:'
-    data.foreach do |genre|
-      " #{genre.name}"
+    data.each do |genre|
+      puts " #{genre['name']}"
     end
   end
 end
