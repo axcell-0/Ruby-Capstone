@@ -10,13 +10,13 @@ module MusicAlbumModule
     FileUtils.touch(ALBUM_PATH)
   end
 
-  def get_date(prompt)
+  def get_date
     date_format_regex = /\A\d{4}-\d{2}-\d{2}\z/
-    print "#{prompt} (yyyy-mm-dd): "
+    print "Publish Date (yyyy-mm-dd): "
     date = gets.chomp
     while !(date.match?(date_format_regex)) do
       puts 'Invalid Date Format'
-      print "#{prompt} (yyyy-mm-dd): "
+      print "Publish Date (yyyy-mm-dd): "
       date = gets.chomp
     end
     return date
@@ -30,7 +30,7 @@ module MusicAlbumModule
     File.write(ALBUM_PATH, JSON.pretty_generate(data))
   end
   def create_music_album
-    publish_date = get_date('Publish Date')
+    publish_date = get_date
     print 'Is this album on Spotify? [Y/N]: '
     on_spotify_input = gets.chomp
     on_spotify = on_spotify_input.downcase == 'y'

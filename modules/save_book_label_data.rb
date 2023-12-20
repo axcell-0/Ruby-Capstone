@@ -1,37 +1,38 @@
 require 'json'
+require_relative './music_album_module'
+require_relative './genre_module'
+require './lib/book'
 
 # Module to preserve data
 module SaveBookLabelData
-  BOOK_FILE = 'lib/data/book.json'.freeze
-  LABEL_FILE = 'lib/data/label.json'.freeze
-  DATA_PATH = 'lib/data'.freeze
-
-  def save_label
-    hash = []
-    FileUtils.mkdir_p(DATA_PATH) unless File.exist?(LABEL_FILE)
-    @label.each do |label|
-      aux = {
-        id: label.id,
-        title: label.title,
-        color: label.color
-      }
-      hash << aux
-    end
-    File.write(LABEL_FILE, JSON.pretty_generate(hash))
+  BOOK_FILE = './data/book.json'.freeze
+  LABEL_FILE = './data/label.json'.freeze
+  def check_book_file
+    return if File.exist?(BOOK_FILE)
+    FileUtils.touch(GENRE_PATH)
   end
 
-  def save_book
-    hash = []
-    @books.each do |book|
-      aux = {
-        id: book.id,
-        date: book.publish_date,
-        publiser: book.publisher,
-        cover_state: book.cover_state,
-        label_id: book.label_id
-      }
-      hash << aux
-    end
-    File.write(BOOK_FILE, JSON.pretty_generate(hash))
+  def save_label
+  end
+
+  def save_books(books)
+    check_book_file
+  end
+
+  def create_book
+    date = get_date
+    print 'Publisher Name: '
+    publisher = gets.chomp
+    puts 'Select Cover State by number:'
+    puts '  1) Good'
+    puts '  2) Bad'
+    cover_state_input = gets.chomp
+    cover_state = cover_state_input == '1' ? 'Good' : 'Bad'
+    book = Book.new(date, publisher, cover_state)
+    genre = create_genre
+    book.save_genre = genre
+    puts 'Book Created Successfully'
+    puts book
+    return book
   end
 end

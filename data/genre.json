@@ -22,5 +22,13 @@
     "items": [
 
     ]
+  },
+  {
+    "json_class": "Genre",
+    "id": 796,
+    "name": "fiction",
+    "items": [
+
+    ]
   }
 ]
