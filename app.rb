@@ -56,3 +56,6 @@ end
 
 app = App.new
 app.add_music_album
+app.add_music_album
+
+

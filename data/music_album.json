@@ -9,5 +9,16 @@
       "name": "rock",
       "id": 50
     }
+  },
+  {
+    "json_class": "MusicAlbum",
+    "id": 100,
+    "publish_date": "2002-12-12",
+    "archived": false,
+    "on_spotify": true,
+    "genre": {
+      "name": "pop",
+      "id": 905
+    }
   }
 ]
