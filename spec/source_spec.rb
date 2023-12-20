@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../classes/source_class'
 
 describe Source do
