@@ -14,4 +14,16 @@ class Game < Item
   def can_be_archived?
     super && @last_played_at && (Date.today - Date.parse(@last_played_at)) > 2 * 365
   end
+  def to_json(option = {})
+  {
+    id: @id,
+    multiplayer: @multiplayer,
+    last_played_at: @last_played_at,
+    publish_date: @publish_date,
+    archived: @archived,
+    label: @label,
+    author: @author,
+    genre: @genre
+  }.to_json(option)
+end
 end
