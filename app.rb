@@ -14,10 +14,6 @@ class App
   include MusicAlbumModule
   include SaveBookLabelData
 
-  def add_genre
-    genre = create_genre
-  end
-
   def list_genre
     show_all_genres
   end
@@ -51,3 +47,4 @@ end
 app = App.new
 app.add_music_album
 app.list_music_albums
+app.list_genre

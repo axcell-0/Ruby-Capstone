@@ -6,5 +6,13 @@
     "items": [
 
     ]
+  },
+  {
+    "json_class": "Genre",
+    "id": 897,
+    "name": "pop",
+    "items": [
+
+    ]
   }
 ]
