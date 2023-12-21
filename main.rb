@@ -24,6 +24,9 @@ class Main
   end
 
   def process_input
+    puts "__________________________________"
+    puts "WELCOME TO CATALOG OF MY THINGS"
+    puts "___________________________________"
     loop do
       options
       print "Enter an option index (or 0 to exit): "
@@ -47,7 +50,7 @@ class Main
       when 8
         @app.list_sources
       when 9
-        @app.add_a_book
+        @app.add_book
       when 10
         @app.add_music_album
       when 11
@@ -64,7 +67,6 @@ class Main
   end
 
   def run 
-    options
     process_input
   end
 end

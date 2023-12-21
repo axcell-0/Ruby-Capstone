@@ -48,6 +48,10 @@ class App
     list_all_movies
   end
 
+  def list_sources
+    show_all_sources
+  end
+
   def add_music_album
     create_music_album
   end
@@ -65,5 +69,3 @@ class App
   end
 end
 
-app = App.new
-app.add_movie
