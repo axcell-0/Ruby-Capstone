@@ -18,7 +18,7 @@ class Label
     JSON.pretty_generate(
       {
         JSON.create_id => self.class.name,
-        color: @id,
+        color: @color,
         title: @title,
         id: @id
       }
