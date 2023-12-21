@@ -1,7 +1,6 @@
 require 'rspec'
 require './lib/author'
 
-
 describe Author do
   before(:each) do
     @author = Author.new('FirstName', 'LastName')

@@ -68,4 +68,3 @@ class App
     add_a_movie
   end
 end
-

@@ -6,30 +6,31 @@ class Main
 
   def options
     puts '_____________________________________________'
-    puts "Choose an option using Index Number" 
-    puts "1) List all books"
-    puts "2) List all music albums"
-    puts "3) List all movies"
-    puts "4) List of games"
-    puts "5) List all genres "
-    puts "6) List all labels"
-    puts "7) List all authors"
-    puts "8) List all sources "
-    puts "9) Add a book"
-    puts "10) Add a music album"
-    puts "11) Add a movie"
-    puts "12) Add a game"
-    puts "0) Exit"
-    puts "_________________________________________________"
+    puts 'Choose an option using Index Number'
+    puts '1) List all books'
+    puts '2) List all music albums'
+    puts '3) List all movies'
+    puts '4) List of games'
+    puts '5) List all genres '
+    puts '6) List all labels'
+    puts '7) List all authors'
+    puts '8) List all sources '
+    puts '9) Add a book'
+    puts '10) Add a music album'
+    puts '11) Add a movie'
+    puts '12) Add a game'
+    puts '0) Exit'
+    puts '_________________________________________________'
   end
 
+  # rubocop:disable Metrics/BlockLength
   def process_input
-    puts "__________________________________"
-    puts "WELCOME TO CATALOG OF MY THINGS"
-    puts "___________________________________"
+    puts '__________________________________'
+    puts 'WELCOME TO CATALOG OF MY THINGS'
+    puts '___________________________________'
     loop do
       options
-      print "Enter an option index (or 0 to exit): "
+      print 'Enter an option index (or 0 to exit): '
       option = gets.chomp.to_i
 
       case option
@@ -58,15 +59,16 @@ class Main
       when 12
         @app.add_game
       when 0
-        puts "Exiting. Goodbye!"
+        puts 'Exiting. Goodbye!'
         break
       else
-        puts "Invalid option. Please choose a valid option."
+        puts 'Invalid option. Please choose a valid option.'
       end
     end
   end
+  # rubocop:enable Metrics/BlockLength
 
-  def run 
+  def run
     process_input
   end
 end
