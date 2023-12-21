@@ -44,19 +44,19 @@ module MovieModule
     source.add_item(movie)
     data.push(JSON.parse(movie.to_json))
     File.write(MOVIE_PATH, JSON.pretty_generate(data))
+    puts 'Movie created successfully!'
+    puts '___________________________'
   end
 
-  # def list_movies
-  #   puts 'No available movie' if @source.empty?
-  #   @movies.each_with_index do |value, index|
-  #     puts "#{index + 1}) Title: #{value.title}, Silent: #{value.silent}, Publish date: #{value.publish_date}"
-  #   end
-  # end
-
-  # def list_source
-  #   puts 'No available source' if @source.empty?
-  #   @source.each_with_index do |value, index|
-  #     puts "#{index + 1}) Source Name: #{value.name}, Source ID: #{value.id}"
-  #   end
-  # end
+  def list_all_movies
+    if !File.exist?(MOVIE_PATH) || File.empty?(MOVIE_PATH)
+      puts 'No Movies have been added yet'
+      return
+    end
+    puts 'Movies:'
+    data = JSON.parse(File.read(MOVIE_PATH))
+    data.each_with_index do |movie, index|
+      puts "  #{index+1}) ID: #{movie['id']}, Title: #{movie['title']}, Genre: #{movie['genre']['name']}, Publish_date: #{movie['publish_date']}"
+    end
+  end
 end

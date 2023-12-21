@@ -38,6 +38,9 @@ class App
   def list_authors
     list_present_authors
   end
+  def list_movies
+    list_all_movies
+  end
 
   def add_music_album
     create_music_album
@@ -51,11 +54,7 @@ class App
   def add_author
     create_author
   end
-
-  def test
+  def add_movie
     add_a_movie
   end
 end
-
-app = App.new
-app.test
