@@ -20,7 +20,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-- [🚀 Live Demo](#live-demo)
+- [📹 Project-Presentation](#presentation)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -64,8 +64,8 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
+[Presentation video](https://drive.google.com/file/d/1U-AY8PsNTxSQQgp-I9ptw9b4KmHN5tY4/view?usp=sharing)
 
-LIVE DEMO
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,10 +111,6 @@ To test the project, execute the following command:
 ```sh
 rspec
 ```
-### Deployment
-
-You can deploy this project using:
->1.  GitHub Pages
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,6 +122,24 @@ You can deploy this project using:
 - GitHub: [@evans](https://github.com/evans)
 - Twitter: [@evans](https://twitter.com/evans)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/evans/)
+
+👤 **Hamid**
+
+- GitHub: [@hamidazim321](https://github.com/hamidazim321)
+- Twitter: [@hamidazim321](https://twitter.com/hamidazim321)
+- LinkedIn: [@hamid-azim](https://www.linkedin.com/in/hamid-azim)
+
+👤 **Samuel**
+
+- GitHub: [@sam2if](https://github.com/sam2if)
+- Twitter: [@samuellemma3733](https://twitter.com/samuellemma3733)
+- LinkedIn: [@s-lemma](https://www.linkedin.com/in/s-lemma/)
+
+👤 **Faiz**
+
+- GitHub: [@the-faizmohammad](https://github.com/the-faizmohammad)
+- Twitter: [@faiz-mohammad-967354142](https://www.linkedin.com/in/faiz-mohammad-967354142/)
+- LinkedIn: [@FaizMoh58742600](https://twitter.com/FaizMoh58742600)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -157,18 +171,6 @@ Contributions, issues, and feature requests are welcome!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQS -->
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-- **How were the Linters utilised?**
-
-  - The Linters (Rubocop) were utilised with the help of resources provided by [@microverseinc](https://github.com/microverseinc).
-
-- **What new features should be expected in the next release of the project?**
-
-  - We are currently working on adding **Archiving Catalog of Items**.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
