@@ -1,12 +1,12 @@
-require_relative '../classes/movie'
-require_relative '../classes/source'
+require_relative '../lib/movie'
+require_relative '../lib/source'
 require 'json'
 
 module Preserve
   attr_accessor :games, :movies, :author, :source
 
   def fetch_file(file)
-    file_path = "./JSONdata/#{file}.json"
+    file_path = "./data/#{file}.json"
     File.new(file_path, 'w+') unless File.exist?(file_path)
     File.write(file_path, '[]') if File.empty?(file_path)
     contents = File.read(file_path)
