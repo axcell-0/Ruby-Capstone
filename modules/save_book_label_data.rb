@@ -47,7 +47,10 @@ module SaveBookLabelData
   end
 
   def show_all_labels
-    puts 'No Labels have been added yet' if File.empty?(LABEL_FILE) || !File.exist?(LABEL_FILE)
+    if File.empty?(LABEL_FILE) || !File.exist?(LABEL_FILE)
+      puts 'No Labels have been added yet' 
+      return
+    end
     data = JSON.parse(File.read(LABEL_FILE))
     puts 'Labels:'
     data.each do |label|
