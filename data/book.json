@@ -1,0 +1,24 @@
+[
+  {
+    "json_class": "Book",
+    "id": 545,
+    "publish_date": "2023-22-22",
+    "archived": false,
+    "publisher": "hamid",
+    "cover_state": "Good",
+    "genre": {
+      "name": "fiction",
+      "id": 926
+    },
+    "label": {
+      "title": "premium",
+      "color": "redd",
+      "id": 478
+    },
+    "author": {
+      "first_name": "hamid",
+      "last_name": "azim",
+      "id": 797
+    }
+  }
+]
