@@ -11,7 +11,7 @@ class Book < Item
     super || @cover_state == 'bad'
   end
 
-  def to_json
+  def to_json(*_args)
     JSON.pretty_generate(
       {
         JSON.create_id => self.class.name,
@@ -36,5 +36,5 @@ class Book < Item
         }
       }
     )
-  end  
+  end
 end

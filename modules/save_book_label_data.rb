@@ -10,10 +10,13 @@ module SaveBookLabelData
   LABEL_FILE = './data/label.json'.freeze
   def check_book_file
     return if File.exist?(BOOK_FILE)
+
     FileUtils.touch(BOOK_FILE)
   end
+
   def check_label_file
     return if File.exist?(LABEL_FILE)
+
     FileUtils.touch(LABEL_FILE)
   end
 
@@ -26,13 +29,13 @@ module SaveBookLabelData
   end
 
   def create_label
-    print "Label Color: "
+    print 'Label Color: '
     color = gets.chomp
-    print "Label Title: "
+    print 'Label Title: '
     title = gets.chomp
     label = Label.new(title, color)
     save_label(label)
-    return label
+    label
   end
 
   def save_book(book)
@@ -44,9 +47,7 @@ module SaveBookLabelData
   end
 
   def show_all_labels
-    if File.read(LABEL_FILE).empty? || !File.exist?(LABEL_FILE)
-      puts "No Labels have been added yet"
-    end
+    puts 'No Labels have been added yet' if File.empty?(LABEL_FILE) || !File.exist?(LABEL_FILE)
     data = JSON.parse(File.read(LABEL_FILE))
     puts 'Labels:'
     data.each do |label|
@@ -55,7 +56,7 @@ module SaveBookLabelData
   end
 
   def create_book
-    date = get_date
+    date = input_date
     print 'Publisher Name: '
     publisher = gets.chomp
     puts 'Select Cover State by number:'
@@ -81,8 +82,10 @@ module SaveBookLabelData
     end
     puts 'Books:'
     data = JSON.parse(File.read(BOOK_FILE))
+    # rubocop:disable Layout/LineLength
     data.each do |book|
       puts "  ID: #{book['id']}, Publisher #{book['publisher']}, Publish_date: #{book['publish_date']}, Genre: #{book['genre']['name']}"
     end
+    # rubocop:enable Layout/LineLength
   end
 end

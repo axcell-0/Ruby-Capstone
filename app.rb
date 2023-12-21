@@ -23,21 +23,27 @@ class App
   def list_genre
     show_all_genres
   end
+
   def list_music_albums
     show_all_music_albums
   end
+
   def list_books
     show_all_books
   end
+
   def list_labels
     list_labels
   end
+
   def list_games
     list_all_games
   end
+
   def list_authors
     list_present_authors
   end
+
   def list_movies
     list_all_movies
   end
@@ -45,15 +51,19 @@ class App
   def add_music_album
     create_music_album
   end
+
   def add_a_book
     create_book
   end
+
   def add_game
     create_game
   end
+
   def add_author
     create_author
   end
+
   def add_movie
     add_a_movie
   end

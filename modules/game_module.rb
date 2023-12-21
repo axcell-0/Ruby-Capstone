@@ -14,17 +14,18 @@ module GameModule
 
   def check_game_file
     return if File.exist?('data/games.json')
+
     FileUtils.touch('data/games.json')
   end
 
   def list_all_games
-    puts "Games:"
-    if File.exist?('data/games.json') && !File.read('data/games.json').empty?
+    puts 'Games:'
+    if File.exist?('data/games.json') && !File.empty?('data/games.json')
       data = JSON.parse(File.read('data/games.json'))
       data.each do |game|
         puts "  ID: #{game['id']}, Multiplayer: #{game['multiplayer']}, Last Played: #{game['last_played_at']}"
         puts "  Last Played: #{game['last_played_at']}, Publish Date: #{game['publish_date']}"
-        puts "  _________________________________________________"
+        puts '  _________________________________________________'
       end
     else
       puts 'There is no Games yet!'

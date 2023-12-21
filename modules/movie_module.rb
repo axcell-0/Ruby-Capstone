@@ -12,7 +12,7 @@ module MovieModule
     FileUtils.touch(MOVIE_PATH)
   end
 
-  def get_date
+  def input_date
     date_format_regex = /\A\d{4}-\d{2}-\d{2}\z/
     print 'Publish Date (yyyy-mm-dd): '
     date = gets.chomp
@@ -30,7 +30,7 @@ module MovieModule
     data = file.empty? ? [] : JSON.parse(file)
     print 'Movie Title: '
     movie_title = gets.chomp
-    published_date = get_date
+    published_date = input_date
 
     print 'Is it a silent movie? [Y/N]: '
     silent = gets.chomp.to_s.downcase == 'y'
@@ -55,8 +55,10 @@ module MovieModule
     end
     puts 'Movies:'
     data = JSON.parse(File.read(MOVIE_PATH))
+    # rubocop:disable Layout/LineLength
     data.each_with_index do |movie, index|
-      puts "  #{index+1}) ID: #{movie['id']}, Title: #{movie['title']}, Genre: #{movie['genre']['name']}, Publish_date: #{movie['publish_date']}"
+      puts "  #{index + 1}) ID: #{movie['id']}, Title: #{movie['title']}, Genre: #{movie['genre']['name']}, Publish_date: #{movie['publish_date']}"
     end
+    # rubocop:enable Layout/LineLength
   end
 end

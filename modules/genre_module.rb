@@ -17,17 +17,15 @@ module GenreModule
   end
 
   def create_genre
-    print "Genre Name:"
+    print 'Genre Name:'
     name = gets.chomp
     genre = Genre.new(name)
     write_genre_to_file(genre)
-    return genre
+    genre
   end
 
   def show_all_genres
-    if File.read(GENRE_PATH).empty? || !File.exist?(GENRE_PATH)
-      puts "No Genres have been added yet"
-    end
+    puts 'No Genres have been added yet' if File.empty?(GENRE_PATH) || !File.exist?(GENRE_PATH)
     data = JSON.parse(File.read(GENRE_PATH))
     puts 'Genres:'
     data.each do |genre|

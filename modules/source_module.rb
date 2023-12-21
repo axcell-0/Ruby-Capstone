@@ -17,17 +17,15 @@ module SourceModule
   end
 
   def create_source
-    print "Source Name:"
+    print 'Source Name:'
     name = gets.chomp
     source = Source.new(name)
     write_source_to_file(source)
-    return source
+    source
   end
 
   def show_all_sources
-    if File.read(SOURCE_PATH).empty? || !File.exist?(SOURCE_PATH)
-      puts "No Sources have been added yet"
-    end
+    puts 'No Sources have been added yet' if File.empty?(SOURCE_PATH) || !File.exist?(SOURCE_PATH)
     data = JSON.parse(File.read(SOURCE_PATH))
     puts 'Sources:'
     data.each do |source|

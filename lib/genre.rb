@@ -19,7 +19,7 @@ class Genre
       {
         JSON.create_id => self.class.name,
         id: @id,
-        name: @name,
+        name: @name
       }
     )
   end

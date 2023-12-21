@@ -11,7 +11,7 @@ module MusicAlbumModule
     FileUtils.touch(ALBUM_PATH)
   end
 
-  def get_date
+  def input_date
     date_format_regex = /\A\d{4}-\d{2}-\d{2}\z/
     print 'Publish Date (yyyy-mm-dd): '
     date = gets.chomp
@@ -32,7 +32,7 @@ module MusicAlbumModule
   end
 
   def create_music_album
-    publish_date = get_date
+    publish_date = input_date
     print 'Is this album on Spotify? [Y/N]: '
     on_spotify_input = gets.chomp
     on_spotify = on_spotify_input.downcase == 'y'
@@ -55,8 +55,10 @@ module MusicAlbumModule
     end
     puts 'Music Album:'
     data = JSON.parse(File.read(ALBUM_PATH))
+    # rubocop:disable Layout/LineLength
     data.each do |album|
       puts "  ID: #{album['id']}, Publish_date: #{album['publish_date']} Genre: #{album['genre']['name']}, on_spotify: #{album['on_spotify']}"
     end
+    # rubocop:enable Layout/LineLength
   end
 end

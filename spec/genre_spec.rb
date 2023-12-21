@@ -18,12 +18,12 @@ describe Genre do
   context '#to_json_string' do
     it 'Should return JSON string version of itself' do
       genre = Genre.new('Rock')
-      test_item = double('test_item', id: '234', name: 'test')
+      double('test_item', id: '234', name: 'test')
 
       json = {
         JSON.create_id => genre.class.name,
         id: genre.id,
-        name: 'Rock',
+        name: 'Rock'
       }
 
       result = genre.to_json
