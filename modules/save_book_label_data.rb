@@ -77,7 +77,7 @@ module SaveBookLabelData
 
   def show_all_books
     if !File.exist?(BOOK_FILE) || File.empty?(BOOK_FILE)
-      puts 'No Albums have been added yet'
+      puts 'No Books have been added yet'
       return
     end
     puts 'Books:'
