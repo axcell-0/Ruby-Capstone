@@ -1,17 +1,16 @@
-require 'json'
-
-class Genre
-  attr_accessor :name, :items, :id
+class Source
+  attr_accessor :name, :items
+  attr_reader :id
 
   def initialize(name)
-    @id = Random.rand(1..1000)
+    @id = Random.rand(1...1000)
     @name = name
     @items = []
   end
 
   def add_item(item)
-    @items.push(item)
-    item.save_genre = self
+    @items << item
+    item.save_source = self
   end
 
   def to_json(*_args)

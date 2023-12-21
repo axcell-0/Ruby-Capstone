@@ -18,16 +18,15 @@ describe Genre do
   context '#to_json_string' do
     it 'Should return JSON string version of itself' do
       genre = Genre.new('Rock')
-      test_item = double('test_item', id: '234', name: 'test')
+      double('test_item', id: '234', name: 'test')
 
       json = {
+        JSON.create_id => genre.class.name,
         id: genre.id,
-        name: 'Rock',
-        items: [test_item.id]
+        name: 'Rock'
       }
 
-      genre.items.push(test_item)
-      result = genre.to_json_string
+      result = genre.to_json
 
       expect(result).to eq(JSON.pretty_generate(json))
     end

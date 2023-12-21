@@ -1,5 +1,5 @@
-require_relative '../classes/source'
-require_relative '../classes/item'
+require_relative '../lib/source'
+require_relative '../lib/item'
 
 describe Source do
   before :each do

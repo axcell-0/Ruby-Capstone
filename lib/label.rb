@@ -1,4 +1,3 @@
-# class label
 class Label
   attr_accessor :title, :color
   attr_reader :id, :items
@@ -12,6 +11,17 @@ class Label
 
   def add_item(item)
     @items << item
-    item.save_genre = self
+    item.save_label = self
+  end
+
+  def to_json(*_args)
+    JSON.pretty_generate(
+      {
+        JSON.create_id => self.class.name,
+        color: @id,
+        title: @title,
+        id: @id
+      }
+    )
   end
 end
