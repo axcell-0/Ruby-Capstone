@@ -13,7 +13,7 @@ class MusicAlbum < Item
     super && on_spotify
   end
 
-  def to_json
+  def to_json(*_args)
     JSON.pretty_generate(
       {
         JSON.create_id => self.class.name,
@@ -24,7 +24,7 @@ class MusicAlbum < Item
         genre: {
           name: @genre.name,
           id: @genre.id
-        },
+        }
         # label: {
         #   title: @label.title,
         #   color: @label.color,
@@ -37,5 +37,5 @@ class MusicAlbum < Item
         # }
       }
     )
-  end  
+  end
 end

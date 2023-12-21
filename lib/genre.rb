@@ -14,7 +14,7 @@ class Genre
     item.save_genre = self
   end
 
-  def to_json
+  def to_json(*_args)
     items_id = @items.map(&:id)
     JSON.pretty_generate(
       {
