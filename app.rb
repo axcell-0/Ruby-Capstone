@@ -20,23 +20,10 @@ class App
   include MovieModule
   include SourceModule
 
-<<<<<<< HEAD
-  def initialize
-    @books = []
-  end
-
-  def add_genre
-    create_genre
-  end
-
-=======
->>>>>>> b7e3f65b95ebd7c6567d67ec9e95de3c0c67683f
   def list_genre
     show_all_genres
   end
 
-<<<<<<< HEAD
-=======
   def list_music_albums
     show_all_music_albums
   end
@@ -61,7 +48,6 @@ class App
     list_all_movies
   end
 
->>>>>>> b7e3f65b95ebd7c6567d67ec9e95de3c0c67683f
   def add_music_album
     create_music_album
   end

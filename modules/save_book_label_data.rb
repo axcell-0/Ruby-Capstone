@@ -11,14 +11,6 @@ module SaveBookLabelData
   def check_book_file
     return if File.exist?(BOOK_FILE)
 
-<<<<<<< HEAD
-    FileUtils.touch(GENRE_PATH)
-  end
-
-  def save_label; end
-
-  def save_books(_books)
-=======
     FileUtils.touch(BOOK_FILE)
   end
 
@@ -47,7 +39,6 @@ module SaveBookLabelData
   end
 
   def save_book(book)
->>>>>>> b7e3f65b95ebd7c6567d67ec9e95de3c0c67683f
     check_book_file
     file = File.read(BOOK_FILE)
     data = file.empty? ? [] : JSON.parse(file)
@@ -85,10 +76,6 @@ module SaveBookLabelData
     author.add_item(book)
     save_book(book)
     puts 'Book Created Successfully'
-<<<<<<< HEAD
-    puts book
-    book
-=======
   end
 
   def show_all_books
@@ -103,6 +90,5 @@ module SaveBookLabelData
       puts "  ID: #{book['id']}, Publisher #{book['publisher']}, Publish_date: #{book['publish_date']}, Genre: #{book['genre']['name']}"
     end
     # rubocop:enable Layout/LineLength
->>>>>>> b7e3f65b95ebd7c6567d67ec9e95de3c0c67683f
   end
 end

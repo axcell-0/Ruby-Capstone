@@ -15,10 +15,6 @@ class Genre
   end
 
   def to_json(*_args)
-<<<<<<< HEAD
-    items_id = @items.map(&:id)
-=======
->>>>>>> b7e3f65b95ebd7c6567d67ec9e95de3c0c67683f
     JSON.pretty_generate(
       {
         JSON.create_id => self.class.name,

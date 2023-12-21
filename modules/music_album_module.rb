@@ -55,16 +55,10 @@ module MusicAlbumModule
     end
     puts 'Music Album:'
     data = JSON.parse(File.read(ALBUM_PATH))
-<<<<<<< HEAD
-    data.each do |album|
-      puts "  ID: #{album['id']}, Publish_date: #{album['publish_date']} Genre: #{album['genre']['name']}, on_spotify: #{album['on_spotify']}"
-    end
-=======
     # rubocop:disable Layout/LineLength
     data.each do |album|
       puts "  ID: #{album['id']}, Publish_date: #{album['publish_date']} Genre: #{album['genre']['name']}, on_spotify: #{album['on_spotify']}"
     end
     # rubocop:enable Layout/LineLength
->>>>>>> b7e3f65b95ebd7c6567d67ec9e95de3c0c67683f
   end
 end
