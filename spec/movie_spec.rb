@@ -1,4 +1,4 @@
-require_relative '../classes/movie'
+require_relative '../lib/movie'
 
 describe Movie do
   before :each do

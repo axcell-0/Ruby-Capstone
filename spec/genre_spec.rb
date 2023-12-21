@@ -24,10 +24,8 @@ describe Genre do
         JSON.create_id => genre.class.name,
         id: genre.id,
         name: 'Rock',
-        items: [test_item.id]
       }
 
-      genre.items.push(test_item)
       result = genre.to_json
 
       expect(result).to eq(JSON.pretty_generate(json))
