@@ -68,6 +68,5 @@ class Main
     process_input
   end
 end
-
 main = Main.new
 main.run
