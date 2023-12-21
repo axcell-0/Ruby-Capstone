@@ -18,6 +18,7 @@ class App
   include AuthorModule
   include GameModule
   include MovieModule
+  include SourceModule
 
   def list_genre
     show_all_genres
@@ -52,8 +53,7 @@ class App
   end
 
   def test
-    add_movie
-    list_movies
+    add_a_movie
   end
 end
 
