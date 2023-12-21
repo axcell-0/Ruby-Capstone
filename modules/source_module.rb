@@ -26,7 +26,7 @@ module SourceModule
 
   def show_all_sources
     if File.empty?(SOURCE_PATH) || !File.exist?(SOURCE_PATH)
-      puts "No Source have been added yet"
+      puts 'No Source have been added yet'
       return
     end
     data = JSON.parse(File.read(SOURCE_PATH))
