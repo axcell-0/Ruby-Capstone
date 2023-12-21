@@ -1,5 +1,5 @@
-require_relative '../classes/movie'
-require_relative '../classes/author'
+require_relative '../lib/movie'
+require_relative '../lib/author'
 
 require_relative 'preserve_module'
 require_relative 'utils'

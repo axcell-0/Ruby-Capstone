@@ -10,12 +10,14 @@ require './lib/label'
 require './modules/save_book_label_data'
 require './modules/author_module'
 require './modules/game_module'
+require './modules/movie_module'
 class App
   include GenreModule
   include MusicAlbumModule
   include SaveBookLabelData
   include AuthorModule
   include GameModule
+  include MovieModule
 
   def list_genre
     show_all_genres
@@ -50,8 +52,8 @@ class App
   end
 
   def test
-    create_game
-    list_all_games
+    add_movie
+    list_movies
   end
 end
 
