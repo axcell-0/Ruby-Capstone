@@ -13,4 +13,15 @@ class Label
     @items << item
     item.save_label = self
   end
+
+  def to_json(*_args)
+    JSON.pretty_generate(
+      {
+        JSON.create_id => self.class.name,
+        color: @id,
+        title: @title,
+        id: @id
+      }
+    )
+  end
 end

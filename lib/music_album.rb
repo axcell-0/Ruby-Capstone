@@ -24,6 +24,7 @@ class MusicAlbum < Item
         genre: {
           name: @genre.name,
           id: @genre.id
+<<<<<<< HEAD
         }
         # label: {
         #   title: @label.title,
@@ -35,6 +36,19 @@ class MusicAlbum < Item
         #   last_name: @author.last_name,
         #   id: @author.id
         # }
+=======
+        },
+        label: {
+          title: @label.title,
+          color: @label.color,
+          id: @label.id
+        },
+        author: {
+          first_name: @author.first_name,
+          last_name: @author.last_name,
+          id: @author.id
+        }
+>>>>>>> b7e3f65b95ebd7c6567d67ec9e95de3c0c67683f
       }
     )
   end

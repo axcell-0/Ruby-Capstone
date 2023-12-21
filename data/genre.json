@@ -1,34 +1,12 @@
 [
   {
     "json_class": "Genre",
-    "id": 50,
-    "name": "rock",
-    "items": [
-
-    ]
+    "id": 684,
+    "name": "rock"
   },
   {
     "json_class": "Genre",
-    "id": 905,
-    "name": "pop",
-    "items": [
-
-    ]
-  },
-  {
-    "json_class": "Genre",
-    "id": 981,
-    "name": "rock",
-    "items": [
-
-    ]
-  },
-  {
-    "json_class": "Genre",
-    "id": 796,
-    "name": "fiction",
-    "items": [
-
-    ]
+    "id": 792,
+    "name": "sdjh"
   }
 ]
