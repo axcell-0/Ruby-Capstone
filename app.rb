@@ -33,7 +33,7 @@ class App
   end
 
   def list_labels
-    list_labels
+    show_all_labels
   end
 
   def list_games
@@ -52,7 +52,7 @@ class App
     create_music_album
   end
 
-  def add_a_book
+  def add_book
     create_book
   end
 
@@ -60,11 +60,10 @@ class App
     create_game
   end
 
-  def add_author
-    create_author
-  end
-
   def add_movie
     add_a_movie
   end
 end
+
+app = App.new
+app.add_movie
